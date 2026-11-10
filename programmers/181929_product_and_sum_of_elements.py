@@ -1,6 +1,12 @@
 def solution(num_list):
-    answer = 0
-    return answer
+    product = 1
+    sqrt_sum = 0
+
+    for num in num_list:
+        product *= num
+        sqrt_sum += num
+
+    return 1 if product < sqrt_sum ** 2 else 0
 
 
 test_cases = [

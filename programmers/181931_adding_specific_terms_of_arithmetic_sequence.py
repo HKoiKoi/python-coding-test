@@ -1,5 +1,12 @@
 def solution(a, d, included):
     answer = 0
+
+    for flag in included:
+        if flag:
+            answer += a
+
+        a += d
+
     return answer
 
 

@@ -1,5 +1,7 @@
 def solution(num_list):
     answer = 0
+    str_num = [str(num) for num in num_list if num % 2 != 0]
+    print("".join(str_num))
     return answer
 
 

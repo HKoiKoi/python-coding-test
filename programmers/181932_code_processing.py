@@ -1,6 +1,25 @@
 def solution(code):
-    answer = ''
-    return answer
+    mode = 0
+    ret = []
+
+    for idx in range(len(code)):
+        if mode == 0:
+            if code[idx] == "1":
+                mode = 1
+            else:
+                if idx % 2 == 0:
+                    ret.append(code[idx])
+        else:
+            if code[idx] == "1":
+                mode = 0
+            else:
+                if idx % 2 != 0:
+                    ret.append(code[idx])
+
+    if not ret:
+        return "EMPTY"
+
+    return "".join(ret)
 
 
 test_cases = [
