@@ -1,6 +1,20 @@
+from itertools import product
+
+
 def solution(l, r):
     answer = []
-    return answer
+
+    for i in range(len(str(l)), len(str(r)) + 1):
+        for p in product(["0", "5"], repeat=i):
+            number = int("".join(p))
+
+            if l <= number <= r:
+                answer.append(number)
+
+    if not answer:
+        return [-1]
+
+    return sorted(list(set(answer)))
 
 
 test_cases = [
