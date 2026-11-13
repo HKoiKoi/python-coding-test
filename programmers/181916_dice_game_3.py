@@ -1,6 +1,23 @@
+from collections import Counter
+
+
 def solution(a, b, c, d):
-    answer = 0
-    return answer
+    count = Counter([a, b, c, d]).most_common()
+
+    if len(count) == 4:
+        return min(a, b, c, d)
+    elif len(count) == 1:
+        return 1111 * a
+    elif len(count) == 3:
+        return count[1][0] * count[2][0]
+    else:
+        p, count_p = count[0]
+        q = count[1][0]
+
+        if count_p == 2:
+            return (p + q) * abs(p - q)
+        else:
+            return (10 * p + q) ** 2
 
 
 test_cases = [
